@@ -25,6 +25,12 @@ router.register(r'activities', ActivityViewSet)
 router.register(r'workouts', WorkoutViewSet)
 router.register(r'leaderboards', LeaderboardViewSet)
 
+import os
+
+# Get codespace name from environment
+codespace_name = os.environ.get('CODESPACE_NAME', 'localhost')
+
+# REST API endpoints
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', api_root, name='api_root'),
